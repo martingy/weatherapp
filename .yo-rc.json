@@ -23,6 +23,7 @@
       "gatling"
     ],
     "jhiPrefix": "jhi",
-    "enableTranslation": false
+    "enableTranslation": false,
+    "herokuAppName": "gentle-brook-21149"
   }
 }

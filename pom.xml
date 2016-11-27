@@ -11,7 +11,7 @@
 
     <groupId>com.martingy.weatherapp</groupId>
     <artifactId>weatherapp</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-RELEASE</version>
     <packaging>war</packaging>
     <name>Weatherapp</name>
 
