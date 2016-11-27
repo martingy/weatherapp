@@ -1,0 +1,64 @@
+<div ng-cloak>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="alert.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Alert
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row" infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+        <div class="col-md-3" ng-repeat="alert in vm.alerts track by alert.id">
+            <div class="panel" ng-class="{'panel-danger': alert.thresholdTemperature < alert.temperature, 'panel-primary': alert.thresholdTemperature >= alert.temperature}" >
+                <div class="panel-heading">
+                    <div class="row">
+                        <h3 class="col-lg-12 panel-title">{{alert.city}}</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <img ng-if="alert.icon" name="icon" id="field_icon" ng-src="{{ vm.OPEN_WEATHER_MAP_ICON_URL + alert.icon + '.png'}}" class="center-block weather-icon-on-card">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 text-center">
+                                <h3>{{alert.temperature}} C°</h3>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <br>
+                            <h4>{{alert.weatherDescription}}</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center" ng-if="alert.thresholdTemperature < alert.temperature">
+                        <p class="text-danger"><small>Threshold temperature ({{alert.thresholdTemperature}} C°) reached!</small></p>
+                    </div>
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="alert-detail({id:alert.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="alert.edit({id:alert.id})"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="alert.delete({id:alert.id})"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

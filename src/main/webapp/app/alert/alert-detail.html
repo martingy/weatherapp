@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span>Alert</span> {{vm.alert.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Threshold Temperature</span></dt>
+        <dd>
+            <span>{{vm.alert.thresholdTemperature}}</span>
+        </dd>
+        <dt><span>City</span></dt>
+        <dd>
+            <span>{{vm.alert.city}}</span>
+        </dd>
+        <dt><span>City Id</span></dt>
+        <dd>
+            <span>{{vm.alert.cityId}}</span>
+        </dd>
+        <dt><span>Temperature</span></dt>
+        <dd>
+            <span>{{vm.alert.temperature}}</span>
+        </dd>
+        <dt><span>Weather Description</span></dt>
+        <dd>
+            <span>{{vm.alert.weatherDescription}}</span>
+        </dd>
+        <dt><span>Icon</span></dt>
+        <dd>
+            <span>{{vm.alert.icon}}</span>
+        </dd>
+        <dt><span>Notification in Email</span></dt>
+        <dd>
+            <span>{{vm.alert.email}}</span>
+        </dd>
+        <dt><span>Notification as Popup</span></dt>
+        <dd>
+            <span>{{vm.alert.popup}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="alert-detail.edit({id:vm.alert.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,8 @@
+version: '2'
+services:
+    weatherapp-sonar:
+        container_name: weatherapp-sonar
+        image: sonarqube:6.0-alpine
+        ports:
+            - 9000:9000
+            - 9092:9092
