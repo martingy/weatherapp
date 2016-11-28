@@ -1,6 +1,8 @@
-# weatherapp
+# Weatherapp
 
-This application was generated using JHipster 3.10.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v3.10.0](https://jhipster.github.io/documentation-archive/v3.10.0).
+This application was generated using JHipster 3.10.0.
+
+Staging environment access: https://gentle-brook-21149.herokuapp.com/
 
 ## Development
 
@@ -29,7 +31,31 @@ Add the `-h` flag on any command to see how you can use it. For example, `bower 
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
-## Building for production
+Dev profile uses an inmemory h2db.
+
+## Staging
+
+The application is hosted in heroku, which provides the staging environment.
+
+This profile uses a Postres db on heroku.
+
+To deploy the application to Heroku, run this command (This should package the application in "production" mode, create an Heroku application with a database, upload the code, and start the application.):
+
+    `yo jhipster:heroku`
+
+### Updating your deployed application
+
+Prepare a new deployment by typing:
+
+    `./mvnw package -Pprod -DskipTests`
+    
+To push to production, type:
+
+    `heroku deploy:jar --jar target/*.war`
+
+## Production
+
+(Currently not in production)
 
 To optimize the weatherapp application for production, run:
 
@@ -89,7 +115,9 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 
 ## Continuous Integration (optional)
 
-To set up a CI environment, consult the [Setting up Continuous Integration][] page.
+Travis does this by commit hook.
+
+Gulp test is currently skipped in travis... It succeeds running locally, but all the tests fails on travis.
 
 [JHipster Homepage and latest documentation]: https://jhipster.github.io
 [JHipster 3.10.0 archive]: https://jhipster.github.io/documentation-archive/v3.10.0
