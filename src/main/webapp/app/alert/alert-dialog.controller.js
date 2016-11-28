@@ -41,7 +41,7 @@
                 vm.alert.id = result.id;
 
                 $uibModal.open({
-                    templateUrl: 'app/alert/alert-already-exists-dialog.html',
+                    templateUrl: 'app/entity/alert-already-exists-dialog.html',
                     controller: 'AlertAlreadyExistsController',
                     controllerAs: 'vm',
                     backdrop: 'static',
