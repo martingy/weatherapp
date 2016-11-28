@@ -43,7 +43,7 @@ This profile uses a Postres db on heroku.
 
 To deploy the application to Heroku, run this command (This should package the application in "production" mode, create an Heroku application with a database, upload the code, and start the application.):
 
-    `yo jhipster:heroku`
+    yo jhipster:heroku
     
 _Note: The app sometimes crashes on heroku, or couldn't start, therefore it needs to be restarted manually by this command in the project root:_ `heroku restart`.
 
@@ -51,11 +51,11 @@ _Note: The app sometimes crashes on heroku, or couldn't start, therefore it need
 
 Prepare a new deployment by typing:
 
-    `./mvnw package -Pprod -DskipTests`
+    ./mvnw package -Pprod -DskipTests
     
 To push to production, type:
 
-    `heroku deploy:jar --jar target/*.war`
+    heroku deploy:jar --jar target/*.war
 
 ## Production
 
