@@ -457,7 +457,7 @@ public class JHipsterProperties {
 
         private String openWeatherMapAppId = "d737429ec6ff9ae9889755a165c621b8";
 
-        private String getOpenWeatherMapUnits = "metric";
+        private String openWeatherMapUnits = "metric";
 
         private int weatherCheckFrequencyInMins = 60;
 
@@ -477,12 +477,12 @@ public class JHipsterProperties {
             this.openWeatherMapAppId = openWeatherMapAppId;
         }
 
-        public String getGetOpenWeatherMapUnits() {
-            return getOpenWeatherMapUnits;
+        public String getOpenWeatherMapUnits() {
+            return openWeatherMapUnits;
         }
 
-        public void setGetOpenWeatherMapUnits(String getOpenWeatherMapUnits) {
-            this.getOpenWeatherMapUnits = getOpenWeatherMapUnits;
+        public void setOpenWeatherMapUnits(String openWeatherMapUnits) {
+            this.openWeatherMapUnits = openWeatherMapUnits;
         }
 
         public int getWeatherCheckFrequencyInMins() {

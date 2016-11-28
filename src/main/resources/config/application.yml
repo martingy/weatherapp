@@ -83,5 +83,5 @@ jhipster:
     weatherApi:
         openWeatherMapUrl: http://api.openweathermap.org/data/2.5/
         openWeatherMapAppId: -------
-        getOpenWeatherMapUnits: metric
-        weatherCheckFrequencyInMins: 1
+        openWeatherMapUnits: metric
+        weatherCheckFrequencyInMins: 60

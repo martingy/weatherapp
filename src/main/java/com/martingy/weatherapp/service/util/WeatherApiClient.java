@@ -34,7 +34,7 @@ public class WeatherApiClient {
         urlBuilder.append("&type=like");
         urlBuilder.append("&mode=json");
         urlBuilder.append("&units=");
-        urlBuilder.append(jHipsterProperties.getWeatherApi().getGetOpenWeatherMapUnits());
+        urlBuilder.append(jHipsterProperties.getWeatherApi().getOpenWeatherMapUnits());
         urlBuilder.append("&q=");
         urlBuilder.append(q);
 
@@ -58,7 +58,7 @@ public class WeatherApiClient {
         urlBuilder.append(jHipsterProperties.getWeatherApi().getOpenWeatherMapAppId());
         urlBuilder.append("&mode=json");
         urlBuilder.append("&units=");
-        urlBuilder.append(jHipsterProperties.getWeatherApi().getGetOpenWeatherMapUnits());
+        urlBuilder.append(jHipsterProperties.getWeatherApi().getOpenWeatherMapUnits());
         urlBuilder.append("&id=");
         urlBuilder.append(id);
 
