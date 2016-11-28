@@ -43,7 +43,7 @@
                 msg: msg,
                 params: undefined,
                 timeout: 10000,
-                toast: true,
+                toast: false,
                 position: undefined
             });
         }
