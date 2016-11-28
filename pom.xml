@@ -66,6 +66,8 @@
         <!-- These remain empty unless the corresponding profile is active -->
         <profile.no-liquibase></profile.no-liquibase>
         <profile.swagger></profile.swagger>
+
+        <postgressql.version>9.4-1201-jdbc4</postgressql.version>
     </properties>
 
 
@@ -222,6 +224,11 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgressql.version}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>

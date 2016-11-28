@@ -26,3 +26,11 @@ spring:
         url: ${JDBC_DATABASE_URL}
         username: ${JDBC_DATABASE_USERNAME}
         password: ${JDBC_DATABASE_PASSWORD}
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+        database: POSTGRESQL
+        show-sql: false
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
