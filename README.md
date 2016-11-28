@@ -4,7 +4,7 @@ This application was generated using JHipster 3.10.0.
 
 Staging environment access: https://gentle-brook-21149.herokuapp.com/
 
-_Note: The app sometimes crashes on heroku, or couldn't start, therefore it needs to be restarted manually by this command in the project root: `heroku restart`.
+_Note: The app sometimes crashes on heroku, or couldn't start, therefore it needs to be restarted manually by this command in the project root:_ `heroku restart`.
 
 ## Development
 
@@ -45,7 +45,7 @@ To deploy the application to Heroku, run this command (This should package the a
 
     `yo jhipster:heroku`
     
-_Note: The app sometimes crashes on heroku, or couldn't start, therefore it needs to be restarted manually by this command in the project root: `heroku restart`.
+_Note: The app sometimes crashes on heroku, or couldn't start, therefore it needs to be restarted manually by this command in the project root:_ `heroku restart`.
 
 ### Updating your deployed application
 
@@ -121,9 +121,9 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 
 Travis does this by commit hook.
 
-_Note: In integration tests, openweathermap is invoked, and if it gives error, tests will fail. In this case, it needs to be rerun.
+_Note: In integration tests, openweathermap is invoked, and if it gives error, tests will fail. In this case, it needs to be rerun._
 
-_Note: gulp test is currently skipped in travis... It succeeds locally, but all the tests fail on travis.
+_Note: gulp test is currently skipped in travis... It succeeds locally, but all the tests fail on travis._
 
 [JHipster Homepage and latest documentation]: https://jhipster.github.io
 [JHipster 3.10.0 archive]: https://jhipster.github.io/documentation-archive/v3.10.0
