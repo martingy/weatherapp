@@ -4,6 +4,7 @@ import com.martingy.weatherapp.WeatherappApp;
 import com.martingy.weatherapp.domain.Alert;
 import com.martingy.weatherapp.repository.AlertRepository;
 import com.martingy.weatherapp.service.AlertService;
+import com.martingy.weatherapp.service.UserService;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +20,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
@@ -90,21 +92,26 @@ public class AlertResourceIntTest {
     private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
 
     @Inject
+    private UserService userService;
+
+    @Inject
     private EntityManager em;
 
     private MockMvc restAlertMockMvc;
 
     private Alert alert;
 
+    private UserDetails userDetails;
+
     @PostConstruct
     public void setup() {
         MockitoAnnotations.initMocks(this);
 
         Authentication authentication = Mockito.mock(Authentication.class);
-
-        User user = new User("admin", "", Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        User user = new User("admin", "admin", Arrays.asList(new SimpleGrantedAuthority("ADMIN")));
         Mockito.when(authentication.getPrincipal()).thenReturn(user);
-
+        Mockito.when(authentication.isAuthenticated()).thenReturn(true);
+        userDetails = user;
         SecurityContext securityContext = Mockito.mock(SecurityContext.class);
         Mockito.when(securityContext.getAuthentication()).thenReturn(authentication);
         SecurityContextHolder.setContext(securityContext);
@@ -139,6 +146,7 @@ public class AlertResourceIntTest {
     @Before
     public void initTest() {
         alert = createEntity(em);
+        alert.setUser(userService.getUserWithAuthorities());
     }
 
     @Test
