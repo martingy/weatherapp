@@ -33,7 +33,7 @@
         })
         .state('alert-detail', {
             parent: 'app',
-            url: '/alert/{id:^(new)}',
+            url: '/alert/{id:[0-9]+}',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'Alert'
